@@ -8,7 +8,7 @@ for (let i = 0; i < dir.length; i++) {
     let date = new Date(c.match(/created: '(.*)'/)[1]).toLocaleString()
     let updated = new Date(c.match(/modified: '(.*)'/)[1]).toLocaleString()
     let arr = c.split('---')
-    let data = '---\n'+"date: '"+date+"'\n"+"updated: '"+updated+"'\n"+arr[1]+'---'+arr[2]
+    let data = '---\n'+"date: '"+date+"'\n"+"updated: '"+updated+"'\n"+"academia: true"+"\n"+arr[1]+'---'+arr[2]
     fs.writeFileSync('./source/_posts/'+ele, data)
     fs.rmSync('./source/_drafts/' + ele)
 }
